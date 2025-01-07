@@ -81,6 +81,8 @@ jobs:
           file "$CACHE_DIR_SDK/$SDK_FILE"
           #tar -I lzma -xvf "$CACHE_DIR_SDK/$SDK_FILE" -C "$SDK_HOME" --strip=1
           7z x "$CACHE_DIR_SDK/$SDK_FILE -o"$SDK_HOME"
+      - name: Create Link Edit Config
+        run: |
           cd "$SDK_HOME"
           test -d "dl" && rm -rf "dl" || true
           test -d "feeds" && rm -rf "feeds" || true
