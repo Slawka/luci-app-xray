@@ -80,7 +80,7 @@ jobs:
           cd -
           file "$CACHE_DIR_SDK/$SDK_FILE"
           #tar -I lzma -xvf "$CACHE_DIR_SDK/$SDK_FILE" -C "$SDK_HOME" --strip=1
-          7z x "$CACHE_DIR_SDK/$SDK_FILE" -so | tar -C "$SDK_HOME" -xvf -
+          7z x "$CACHE_DIR_SDK/$SDK_FILE" -so | tar -C "$SDK_HOME" -xvf - --strip=1
       - name: Create Link Edit Config
         run: |
           cd "$SDK_HOME"
